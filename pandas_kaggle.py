@@ -2,6 +2,8 @@ import csv as csv
 import numpy as np
 import pandas as pd
 
+import matplotlib.pyplot as plt
+
 def pandas_kaggle():
     
     csv_file_object = csv.reader(open('csv/train.csv', 'r'))
@@ -33,6 +35,12 @@ def pandas_smart_kaggle():
     print('median : ', df['Age'].median())
 
     print(df[ (df['Age'] > 60) & (df['Survived'] == 1)]  )
+
+    df['Gender']   = df['Sex'].map( {'female': 0, 'male': 1} ).astype(int)
+    print(df['Embarked'].head(10))
+    df['Embarked'] = df['Embarked'].map( lambda x: (1 if x == 'S' else 0) ).astype(int)
+#    print(df['Gender'])
+    print(df['Embarked'].head(10))
     
 if __name__ == '__main__':
 #    pandas_kaggle()
