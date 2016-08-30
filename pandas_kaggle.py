@@ -28,9 +28,11 @@ def pandas_smart_kaggle():
     print(df.loc[15,'Age'])
     print(df.info())
 
-    print(df['Age'])
+    print(df[['Age', 'Cabin', 'Fare']])
     print('mean : ', df['Age'].mean())
     print('median : ', df['Age'].median())
+
+    print(df[ (df['Age'] > 60) & (df['Survived'] == 1)]  )
     
 if __name__ == '__main__':
 #    pandas_kaggle()
