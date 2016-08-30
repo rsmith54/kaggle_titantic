@@ -27,7 +27,11 @@ def pandas_smart_kaggle():
     print(df.describe())
     print(df.loc[15,'Age'])
     print(df.info())
+
+    print(df['Age'])
+    print('mean : ', df['Age'].mean())
+    print('median : ', df['Age'].median())
     
 if __name__ == '__main__':
-    pandas_kaggle()
+#    pandas_kaggle()
     pandas_smart_kaggle()
